@@ -3,3 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.game-board{
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    gap:10px;
+    justify-content: center;
+    align-content: center;
+}
+
+.box{
+    background-color: green;
+    border: 1px solid red;
+}
