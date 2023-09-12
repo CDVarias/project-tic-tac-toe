@@ -17,21 +17,19 @@
             <!-- title -->
             <button class="vs-bot" id="vs-bot">Bot Mode</button>
             <button class="vs-p2" id="vs-p2">2-Player Mode</button>
+            <div class="multiplayer" id="multiplayer">
+                <label for="player1">Player 1:</label>
+                <input type="text" id="player1" name="player1">
+                <label for="player2">Player 2:</label>
+                <input type="text" id="player2" name="player2">
+            </div>
         </div>
 
-        <div class="game-board">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-        </div>
+
+        <div class="game-board" id="game-board"></div>
 
         <button class="restart" id="restart">Restart</button>
+        <div id = message></div>
     </div>
     <script src="script.js"></script>
 </body>
