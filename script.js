@@ -116,17 +116,23 @@ function checkForTie (boardUsed) {
     return boardUsed.every(cell => cell !== "");
 }
 
+const vsBotButton = document.querySelector("#vs-bot");
+const pvpButton = document.querySelector("#vs-p2");
 const startButton = document.querySelector("#start-game");
 startButton.addEventListener("click", () =>{
    startButton.style.display = "none";
-   game.start();
+   vsBotButton.style.display = "inline";
+   pvpButton.style.display = "inline";
+//    game.start();
 })
+
+
 
 
 const multiPlayer = document.querySelector("#multiplayer")
 const multiPlayerBtn = document.querySelector("#vs-p2");
 multiPlayerBtn.addEventListener("click",() =>{
-    multiPlayer.style.display = "block";   
+    multiPlayer.style.display = "flex";   
 })
 
 const restartButton = document.querySelector("#restart");
