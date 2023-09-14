@@ -21,7 +21,17 @@
     gap: 50px;
 }
 
+.pvp-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
 .multiplayer{
+    margin-top: 20px;
     justify-content: center;
     align-items: center;
 }
@@ -44,11 +54,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
-    
+    font-size: 40px; 
 }
 
-.multiplayer,.vs-bot,.vs-p2,.restart{
+.box:hover{
+    cursor: pointer;
+}
+
+.multiplayer,.vs-bot,.vs-p2,.restart,.start-game-2{
     display: none;
+}
+
+.message{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restart-container{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 

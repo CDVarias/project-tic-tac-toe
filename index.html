@@ -10,7 +10,6 @@
     <div class="container">
         <div class="first-part">
             <h1 id="title">Tic Tac Toe</h1>
-
             <button class = "start-game" id="start-game">Start Game</button>
         </div>
 
@@ -20,17 +19,21 @@
         </div>
         <div class="multiplayer" id="multiplayer">
             <label for="player1">Player 1:</label>
-            <input type="text" id="player1" name="player1">
+            <input type="text" id="player1" name="player1" placeholder="Enter your name:" required>
             <label for="player2">Player 2:</label>
-            <input type="text" id="player2" name="player2">
-            
+            <input type="text" id="player2" name="player2" placeholder="Enter your name:" required>
         </div>
 
+        <div class="pvp-container">
+        <button class = "start-game-2" id="start-game-2">Start PVP Game</button>
+        </div>
 
         <div class="game-board" id="game-board"></div>
 
+        <div class="restart-container">
         <button class="restart" id="restart">Restart</button>
-        <div id = message></div>
+        </div>
+        <div id = message class="message"></div>
     </div>
     <script src="script.js"></script>
 </body>

@@ -66,13 +66,18 @@ const game = (() => { //logic on what will be the flow of the game //module patt
 
         if (checkWinner(gameBoard.getGameboard(),players[currentPlayerIndex].mark)){
             gameOver = true;
-            displayController.renderMessage(`${players[currentPlayerIndex.name]} wins!`);
+            displayController.renderMessage(`${players[currentPlayerIndex].name} wins!`);
+            
+           restartButton.style.display = "inline";
         } else if(checkForTie(gameBoard.getGameboard())){
             gameOver = true;
             displayController.renderMessage(`It's a tie`);
+            restartButton.style.display = "inline";
         }
 
         currentPlayerIndex = currentPlayerIndex === 0 ? 1 : 0;
+
+
     }
 
     const restart = () => {
@@ -82,6 +87,7 @@ const game = (() => { //logic on what will be the flow of the game //module patt
         gameBoard.render();
         gameOver = false;
         document.querySelector("#message").innerHTML = "";
+        restartButton.style.display = "none";
     }
 
     return{
@@ -119,20 +125,36 @@ function checkForTie (boardUsed) {
 const vsBotButton = document.querySelector("#vs-bot");
 const pvpButton = document.querySelector("#vs-p2");
 const startButton = document.querySelector("#start-game");
+
 startButton.addEventListener("click", () =>{
    startButton.style.display = "none";
    vsBotButton.style.display = "inline";
    pvpButton.style.display = "inline";
-//    game.start();
+ 
 })
 
+const multiPlayer = document.querySelector("#multiplayer");
+const multiPlayerBtn = document.querySelector("#vs-p2");;
+const startPvpBtn = document.querySelector("#start-game-2");
 
-
-
-const multiPlayer = document.querySelector("#multiplayer")
-const multiPlayerBtn = document.querySelector("#vs-p2");
 multiPlayerBtn.addEventListener("click",() =>{
     multiPlayer.style.display = "flex";   
+    vsBotButton.style.display = "none";
+    // startButton.style.display = "block";
+    pvpButton.style.display = "none";
+    startPvpBtn.style.display = "inline";
+})
+
+startPvpBtn.addEventListener("click", () => {
+    const player1Name = document.querySelector("#player1").value;
+    const player2Name = document.querySelector("#player2").value;
+  
+    if (player1Name.trim() === "" || player2Name.trim() === "") {
+      alert("Both player names are required.");
+    } else {
+      startPvpBtn.style.display = "none";
+      game.start();
+    }
 })
 
 const restartButton = document.querySelector("#restart");
